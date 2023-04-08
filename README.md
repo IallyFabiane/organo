@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<h2>Project deployed on: https://organo-pi-ten.vercel.app/</h2>
+
 ## Available Scripts
 
 In the project directory, you can run:
