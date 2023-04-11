@@ -73,11 +73,15 @@ function mudarCorTime(corPrimaria, id) {
   function deletarColaborador(id) {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
+
+  function cadastrarTime({nome, corPrimaria}) {
+    setTimes([...times, {nome, corPrimaria, id: uuidv4()}])
+  }
   
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
+      <Formulario cadastrarTime={cadastrarTime} times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
       {times.map(time => {
         return <Time id={time.id} key={time.nome} aoDeletar={deletarColaborador} mudarCor={mudarCorTime} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} />
       })}
