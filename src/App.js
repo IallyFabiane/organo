@@ -55,10 +55,6 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState([]);
 
-function deletarColaborador() {
-
-}
-
 function mudarCorTime(corPrimaria, id) {
   setTimes(times.map(time => {
     if(time.id === id) {
@@ -74,6 +70,10 @@ function mudarCorTime(corPrimaria, id) {
     setColaboradores([...colaboradores, colaborador])
   }
 
+  function deletarColaborador(id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
+  }
+  
   return (
     <div className="App">
       <Banner />
